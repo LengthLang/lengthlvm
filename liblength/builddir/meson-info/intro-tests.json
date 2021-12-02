@@ -1,0 +1,1 @@
+[{"cmd": ["/home/nailuj29/lengthlvm/liblength/builddir/test/testexe"], "env": {}, "name": "Liblength test", "workdir": null, "timeout": 30, "suite": ["liblength"], "is_parallel": true, "priority": 0, "protocol": "exitcode", "depends": ["9f86d08@@testexe@exe"]}]
