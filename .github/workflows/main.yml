@@ -29,7 +29,7 @@ jobs:
     - name: cd into liblength
       run: cd liblength
     - name: Test
-      uses: BSFishy/meson-build@v1.0.3=
+      uses: BSFishy/meson-build@v1.0.3
       with:
         action: test
 
