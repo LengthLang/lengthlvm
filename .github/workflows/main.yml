@@ -26,10 +26,18 @@ jobs:
       uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v1
-    - name: cd into liblength
-      run: cd liblength
-    - name: Test
-      uses: BSFishy/meson-build@v1.0.3
+    - name: Install Meson
+      run: pip install meson ninja
+    - name: Set up Meson builddir
+      run: |
+        cd liblength
+        meson setup builddir
+    - name: Run tests
+      run: meson test -C liblength/builddir/ -v
+    - uses: actions/upload-artifact@v1
+      if: failure()
       with:
-        action: test
+        name: testlog.txt
+        path: liblength/builddir/meson-logs/testlog.txt
+
 
