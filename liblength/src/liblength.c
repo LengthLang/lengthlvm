@@ -146,9 +146,7 @@ void lengthRor(Stack* stack) {
 		push(stack, oldBuffer[i]);
 	}
 
-	printf("%ld\n", oldPointer);
 	for (size_t i = 0; i < oldPointer; i++) {
-		printf("%ld\n", oldBuffer[i]);
 	}
 
 	push(stack, oldBuffer[0]);
