@@ -22,10 +22,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v1
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v1
     - name: Install Meson
       run: pip install meson ninja
     - name: Set up Meson builddir
