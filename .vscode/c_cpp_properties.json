@@ -9,7 +9,8 @@
             "compilerPath": "/usr/local/bin/clang++",
             "cStandard": "c17",
             "cppStandard": "c++14",
-            "intelliSenseMode": "linux-clang-x64"
+            "intelliSenseMode": "linux-clang-x64",
+            "compileCommands": "${workspaceFolder}/liblength/builddir/compile_commands.json"
         }
     ],
     "version": 4

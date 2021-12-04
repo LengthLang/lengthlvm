@@ -145,10 +145,7 @@ void lengthRor(Stack* stack) {
 	for (size_t i = 1; i < oldPointer; i++) {
 		push(stack, oldBuffer[i]);
 	}
-
-	for (size_t i = 0; i < oldPointer; i++) {
-	}
-
+	
 	push(stack, oldBuffer[0]);
 	free(oldBuffer);
 }
