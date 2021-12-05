@@ -103,7 +103,7 @@ impl<'ctx> Compiler<'ctx> {
                         .unwrap();
 
                     let result: IntValue = self.builder.build_int_compare(
-                        inkwell::IntPredicate::EQ,
+                        inkwell::IntPredicate::NE,
                         stack_top.into_int_value(),
                         self.ctx.i64_type().const_int(0, false).into(),
                         "",
@@ -113,7 +113,7 @@ impl<'ctx> Compiler<'ctx> {
                     } else if i + 2 == self.code.len() {
                         self.builder.build_conditional_branch(result, blocks[i + 1], exit);
                     } else {
-                        self.builder.build_conditional_branch(result, blocks[i + 1], exit);
+                        self.builder.build_conditional_branch(result, blocks[i + 1], blocks[i + 2]);
 
                     }
                 }

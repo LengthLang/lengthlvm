@@ -58,6 +58,7 @@ int64_t pop(Stack* stack) {
 }
 
 void lengthInp(Stack* stack) {
+	printf("Input requested: ");
 	push(stack, getc(stdin));
 }
 
