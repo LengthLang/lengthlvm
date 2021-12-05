@@ -1,2 +1,5 @@
 /target
-test.ir
+out.ir
+out.o
+length-compiled
+*.len
