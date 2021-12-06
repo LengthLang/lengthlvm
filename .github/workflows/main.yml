@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  test-liblength:
+  test:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -38,7 +38,7 @@ jobs:
         name: testlog.txt
         path: liblength/builddir/meson-logs/testlog.txt
     - name: build liblength
-      run: meson build -C liblength/builddir/
+      run: meson compile -C liblength/builddir/
     - uses: actions-rs/toolchain@v1
       with:
         toolchain: stable
