@@ -37,5 +37,22 @@ jobs:
       with:
         name: testlog.txt
         path: liblength/builddir/meson-logs/testlog.txt
+    - name: build liblength
+      run: meson build -C liblength/builddir/
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+    - uses: actions-rs/cargo@v1
+      with:
+        command: build
+    - name: Run length tests
+      run: ./test.sh
+    - name: Zip tests folder
+      run: zip -r tests.zip tests
+    - uses: actions/upload-artifact@v1
+      if: failure()
+      with:
+        name: tests.txt
+        path: tests.zip
 
 

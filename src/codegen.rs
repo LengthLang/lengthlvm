@@ -1,4 +1,4 @@
-use inkwell::{basic_block::BasicBlock, builder::Builder, context::Context, module::Module, values::{IntMathValue, IntValue}};
+use inkwell::{basic_block::BasicBlock, builder::Builder, context::Context, module::Module, values::IntValue};
 
 use crate::parser::Opcode;
 
@@ -20,6 +20,7 @@ impl<'ctx> Compiler<'ctx> {
     }
 
     pub fn compile(&mut self) {
+
         let main_type = self.ctx.i32_type().fn_type(&[], false);
         let main = self.module.add_function("main", main_type, None);
 

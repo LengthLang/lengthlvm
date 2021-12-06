@@ -1,5 +1,9 @@
 /target
-out.ir
-out.o
+*.ir
+*.o
 length-compiled
 *.len
+/tests/*
+!/tests/*.actual
+!/tests/*.expected
+!/tests/*.len
