@@ -29,7 +29,7 @@ jobs:
     - name: Set up Meson builddir
       run: |
         cd liblength
-        meson setup builddir
+        meson setup builddir --default-library static
     - name: Run tests
       run: meson test -C liblength/builddir/ -v
     - uses: actions/upload-artifact@v1
